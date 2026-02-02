@@ -1,0 +1,272 @@
+/*
+ * Estilos do site do Ateliê Bruna Coimbra
+ * Cores terrosas e estética clean que remetem ao crochê artesanal.
+ */
+
+:root {
+  --primary-color: #865439; /* tom terroso inspirado na lã e na madeira */
+  --secondary-color: #f9f5ef; /* fundo claro para destacar as imagens */
+  --accent-color: #d4a373; /* detalhes e hovers */
+  --text-color: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Container central com largura máxima */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho fixo simples */
+header {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Seção hero com imagem e overlay escuro */
+.hero {
+  position: relative;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--accent-color);
+}
+
+/* Seções principais */
+.catalogo-section,
+.sobre-section,
+.contato-section {
+  padding: 4rem 0;
+}
+
+.catalogo-section h2,
+.sobre-section h2,
+.contato-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+.section-intro {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
+/* Galeria de miniaturas */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery .thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.gallery .thumb img:hover {
+  transform: scale(1.05);
+}
+
+/* Seção sobre e contato */
+.sobre-section p,
+.contato-section p {
+  margin-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.contato-section a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Modal para visualização das páginas em tamanho maior */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 10000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+#modalImg {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+}
+
+.modal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-nav button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-nav button:hover {
+  color: var(--accent-color);
+}
+
+#closeModal {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#closeModal:hover {
+  color: var(--accent-color);
+}
+
+/* Rodapé */
+footer {
+  background: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  nav ul {
+    gap: 0.5rem;
+  }
+}
