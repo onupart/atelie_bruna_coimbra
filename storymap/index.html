@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="StoryMap cartográfico-textual do projeto Crochê: O Elo Invisível.">
+  <title>Crochê: O Elo Invisível — StoryMap v0.5</title>
+  <link rel="stylesheet" href="https://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css">
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #storymap { width: 100%; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="storymap"></div>
+  <script src="https://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"></script>
+  <script>
+    const storymap_data = {"width": 1200, "height": 700, "font_css": "stock:PT", "calculate_zoom": true, "storymap": {"language": "pt", "map_type": "osm:standard", "map_as_image": false, "slides": [{"type": "overview", "text": {"headline": "Crochê: O Elo Invisível", "text": "<p><strong>Mulheres, memória e território na cadeia da lã do Rio Grande do Sul.</strong></p><p>Este percurso cartográfico acompanha relações entre memória artesanal, trabalho feminino, cadeia da lã, redes de cooperação, escola, autoria e circulação pública.</p><p>Esta é a versão cartográfico-textual do projeto: deliberadamente não incorpora imagens, vozes ou documentos pessoais.</p>"}, "date": null}, {"location": {"lat": -31.82318, "lon": -51.74374, "zoom": 10, "line": true}, "text": {"headline": "Estreito: tradição e experimentação", "text": "<p>No Estreito, o crochê circula entre memória familiar, encomendas, ensino e experimentação. O território aparece aqui não apenas como localização, mas como condição concreta de produção, circulação de saberes e criação.</p><p><strong>Eixo:</strong> técnica artesanal, memória e novas formas de registro.</p>"}}, {"location": {"lat": -32.17212, "lon": -52.15813, "zoom": 11, "line": true}, "text": {"headline": "Cassino: o ateliê como espaço de criação e renda", "text": "<p>No Cassino, o trabalho artesanal conecta aprendizagem, produção, circulação e geração de renda. A peça pronta é apenas a face visível de uma cadeia composta por escolhas, técnicas, tempo de trabalho e relações sociais.</p><p><strong>Eixo:</strong> economia criativa e trabalho artesanal.</p>"}}, {"location": {"lat": -32.0145, "lon": -52.0406, "zoom": 11, "line": true}, "text": {"headline": "São José do Norte: quando os pontos formam uma rede", "text": "<p>A formação de redes entre artesãs, ateliês e organizações locais amplia a capacidade de circulação, aprendizagem e cooperação. O desafio é fortalecer a produção coletiva sem apagar a autoria de quem faz.</p><p><strong>Eixo:</strong> rede territorial, cooperação e autoria.</p>"}}, {"location": {"lat": -32.0347, "lon": -52.1144, "zoom": 13, "line": true}, "text": {"headline": "Rio Grande: a cadeia da lã e o elo ausente", "text": "<p>A antiga Fábrica Rheingantz permite conectar o presente artesanal à história da industrialização laneira no sul do estado. O percurso propõe uma pergunta: como tornar visível o trabalho que transforma o fio em peças, saberes e valor?</p><p><a href='https://www.iphae.rs.gov.br/complexo-rhein' target='_blank'>Fonte patrimonial: IPHAE/RS</a></p><p><strong>Eixo:</strong> patrimônio industrial e cadeia da lã.</p>"}}, {"location": {"lat": -31.63216, "lon": -51.41787, "zoom": 11, "line": true}, "text": {"headline": "Bojuru: quando a pesquisa volta à escola", "text": "<p>Em Bojuru, escola, pesquisa, audiovisual e território se encontram. O ambiente escolar torna-se um lugar de interpretação da memória local e de experimentação com linguagens digitais.</p><p><strong>Eixo:</strong> educação, território e produção de conhecimento.</p>"}}, {"location": {"lat": -31.63216, "lon": -51.41787, "zoom": 12, "line": true}, "text": {"headline": "Certificar para não apagar", "text": "<p>A certificação é apresentada como problema de autoria e rastreabilidade: como registrar procedência, participação e memória do fazer sem transformar a artesania em simples dado?</p><p><strong>Eixo:</strong> autoria, procedência e memória verificável.</p>"}}, {"location": {"lat": -29.85496, "lon": -51.18469, "zoom": 11, "line": true}, "text": {"headline": "Expointer 2026: tornar o elo visível", "text": "<p>A chegada do percurso à Expointer funciona como abertura para uma escala estadual: cadeia da lã, artesanato, inovação, patrimônio, educação e desenvolvimento territorial passam a ser lidos como partes de uma mesma trama.</p><p><strong>Eixo:</strong> circulação pública e ampliação de escala.</p>"}}]}, "version": "0.5", "editorial_status": "MVP cartográfico-textual sem mídia pessoal ou de licença incerta", "publication_notes": {"media_policy": "Sem mídia pessoal, privada ou de licença incerta nesta versão.", "enrichment": "Mídias poderão ser adicionadas posteriormente à versão interna quando houver base adequada."}, "publication_gate": {"public_release_allowed": true, "scope": "Estrutura HTML/JSON e conteúdo cartográfico-textual. Não inclui fotografias, vídeos, certificados ou dados pessoais.", "note": "A hospedagem pública ainda precisa de um serviço web/URL estável."}};
+    const options = {
+      language: "pt",
+      map_type: "osm:standard",
+      map_as_image: false,
+      calculate_zoom: true,
+      call_to_action: true,
+      call_to_action_text: "Seguir o fio"
+    };
+    const storymap = new KLStoryMap.StoryMap("storymap", storymap_data, options);
+    window.addEventListener("resize", () => storymap.updateDisplay());
+  </script>
+</body>
+</html>
